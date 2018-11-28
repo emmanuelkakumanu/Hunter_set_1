@@ -27,7 +27,7 @@ class Ideone
 					cnt++;
 				}
 			}
-			if(cnt==2)
+			if(cnt>=2)
 			{
 				System.out.print(a[i]);
 				st=1;
