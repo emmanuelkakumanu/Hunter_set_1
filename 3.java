@@ -10,7 +10,7 @@ class Ideone
 	{
 		// your code goes here
 		Scanner s=new Scanner(System.in);
-		int n=s.nextInt();
+		int n=s.nextInt();boolean st=false;
 		int a[]=new int[n];
 		for(int i=0;i<n;i++)
 		a[i]=s.nextInt();
@@ -21,11 +21,17 @@ class Ideone
 			if(i==a[i])
 			{
 				b.add(a[i]);
+				st=true;
 			}
 		}
 		Collections.sort(b);
-		System.out.print(b.get(0));
-		for(int i=1;i<b.size();i++)
-		System.out.print(" "+b.get(i));
+		if(st)
+		{
+			System.out.print(b.get(0));
+			for(int i=1;i<b.size();i++)
+			System.out.print(" "+b.get(i));
+		}
+		else
+		System.out.print("-1");
 	}
 }
