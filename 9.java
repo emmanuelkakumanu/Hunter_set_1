@@ -14,18 +14,19 @@ class Ideone
 		int a[]=new int[n];
 		for(int i=0;i<n;i++)
 		a[i]=s.nextInt();
-		boolean st=false;
-		for(int i=0;i<n;i++)
+		int ml=0,mr=1,ms=a[0]+a[1],sum=0;;
+		for(int i=0;i<n-1;i++)
 		{
-			for(int j=0;j<n;j++)
+			for(int j=i+1;j<n;j++)
 			{
-				if(a[i]+a[j]==0)
+				sum=a[i]+a[j];
+				if(Math.abs(ms)>Math.abs(sum))
 				{
-					System.out.print(a[i]+" "+a[j]);st=true;break;
+					ms=sum;
+					ml=i;mr=j;
 				}
 			}
-			if(st)
-			break;
 		}
+		System.out.print(a[ml]+" "+a[mr]);
 	}
 }
