@@ -9,7 +9,7 @@ class Ideone
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
-		Scanner s=new Scanner(System.in);
+		Scanner s=new Scanner(System.in);boolean st=true;
 		int n=s.nextInt();
 		int m=s.nextInt();
 		int a[]=new int[n];
@@ -19,19 +19,26 @@ class Ideone
 		
 		for(int i=0;i<m;i++)
 		b[i]=s.nextInt();
-		int cnt=0;
-		for(int i=0;i<m;i++)
-		{
-			for(int j=0;j<n;j++)
-			{
-				if(b[i]==a[j])
-				cnt++;
-			}
-		}
-		if(cnt>=m)
-		System.out.print("YES");
-		else
-		System.out.print("NO");
 		
+		
+		HashSet<Integer> hset= new HashSet<>(); 
+		for(int i = 0; i < n; i++) 
+        { 
+            if(!hset.contains(a[i])) 
+                hset.add(a[i]); 
+        } 
+        
+        for(int i = 0; i < m; i++) 
+        { 
+            if(!hset.contains(b[i])) 
+            {
+                st=false; break;
+            }
+        } 
+        if(st)
+        System.out.print("YES");
+        else
+        System.out.print("NO");
+        
 	}
 }
